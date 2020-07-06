@@ -34,6 +34,7 @@ import Dashboard from "Screens/Dashboard/Dashboard";
 import Search from "./Screens/Tabs/Search";
 import Message from "./Screens/Tabs/Message";
 import Profile from "./Screens/Tabs/Profile";
+import ComponentDesigning from "./ExperimentalPlayground/ComponentDesigning";
 
 let transitionSpeed = 650;
 let tabIconSize = 18;
@@ -90,7 +91,9 @@ const LoginStack = createStackNavigator(
 const DashboardStack = createStackNavigator(
   {
     dashboard: Dashboard,
+    ComponentDesigning:ComponentDesigning,
   },
+
   {
     initialRouteName: "dashboard",
     headerMode: "none",
@@ -126,7 +129,7 @@ let colors = {dash:{color:activeColor}}
 export default createMaterialBottomTabNavigator(
   {
     Dashboard: {
-      screen: Dashboard,
+      screen: DashboardStack,
       navigationOptions: {
         tabBarOnPress:()=>{Keyboard.dismiss();colors = [];colors['dash'] = {color:activeColor}},
         tabBarIcon: () => (

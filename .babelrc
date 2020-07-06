@@ -8,8 +8,10 @@
       }
     ],
 
+  
     ["module-resolver", {
       "root": ["./src"],
+      "baseUrl": "./src",
       "alias": {
         "helpers": "./src/Hesslpers",
         "assets":"./assets"

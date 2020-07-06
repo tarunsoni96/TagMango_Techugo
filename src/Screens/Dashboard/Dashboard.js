@@ -104,6 +104,11 @@ class Dashboard extends Component {
 
   getData = () => {};
 
+
+  componentDidMount(){
+   this.props.navigation.navigate('ComponentDesigning')
+  }
+
   onRefresh = () => {
     this.setState({refreshingData:false})
   };
@@ -120,6 +125,7 @@ class Dashboard extends Component {
         onRefresh={this.onRefresh}
         refreshingData={this.state.refreshingData}
       >
+      
         <SubHeader title={"Activity"} />
         <View style={{ flex: 1 }}>
           <ActivityCategories categories={this.state.categories} />
